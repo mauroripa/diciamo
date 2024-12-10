@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .innerDiv{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .immagine{
+            width: 20%;
+            height: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="innerDiv">
+            <h1></h1>
+            <button>clicca se hai sentito diciamo</button>
+        </div>
+    </div>
+    <script>
+        let i = 0;
+        let h1 = document.querySelector('h1');
+        let button = document.querySelector('button');
+        let innerDiv = document.querySelector('.innerDiv');
+        button.addEventListener('click', function(){
+            if (i == 10) {
+                let image = document.createElement('img')
+                image.src= "immagine.png";
+                image.className = "immagine";
+                innerDiv.appendChild(image); 
+            }
+            h1.innerHTML = parseInt(i++); 
+        })
+    </script>
+</body>
+</html>
