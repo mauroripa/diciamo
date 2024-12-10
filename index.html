@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <style>
         .container{
             height: 100vh;
@@ -31,12 +32,12 @@
         </div>
     </div>
     <script>
-        let i = 0;
+        let i = 1;
         let h1 = document.querySelector('h1');
         let button = document.querySelector('button');
         let innerDiv = document.querySelector('.innerDiv');
         button.addEventListener('click', function(){
-            if (i == 10) {
+            if (i % 10 ==0) {
                 let image = document.createElement('img')
                 image.src= "immagine.png";
                 image.className = "immagine";
@@ -44,6 +45,18 @@
             }
             h1.innerHTML = parseInt(i++); 
         })
+
+        $("button").on("click",function(){
+            $(".immagine").animate({
+            top:"200px",
+            left:"500px"
+            },2000,function(){
+
+            })
+            
+        });
+
+        
     </script>
 </body>
 </html>
